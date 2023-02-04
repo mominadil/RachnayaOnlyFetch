@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -15,10 +16,10 @@ use App\Http\Controllers\BookController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
-Route::get('/book/{slug}', [BookController::class, 'search'])->name('book.slug');
+Route::get('/', [CategoryController::class, 'categoryAll'])->name('home');
+
+Route::get('/category/{category_slug}', [CategoryController::class, 'CategorySearch'])->name('category.slug');
+Route::get('/book/{slug}', [BookController::class, 'show'])->name('book.slug');
 

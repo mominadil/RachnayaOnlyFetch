@@ -1,0 +1,455 @@
+/* ---------------------------- */
+
+/* CSS RESET */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* CSS RESET ENDS */
+
+/* ---------------------------- */
+
+/* Header Section Start */
+
+#main-header {
+  justify-content: space-between;
+
+  align-items: center;
+  background-color: white;
+
+  min-height: 60px;
+  position: relative;
+
+  /* overflow: hidden; */
+
+  box-shadow: 0px 4px 10px rgb(0 0 0 / 10%);
+}
+
+.rachnaye-logo {
+  width: 170px;
+}
+
+.user-ava {
+  width: 2rem;
+  cursor: pointer;
+  height: 2rem;
+  background-color: #fb8f67;
+  display: flex;
+
+  color: white;
+
+  font-size: 1.25rem;
+  align-items: center;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1;
+  user-select: none;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+/* Header Section Ends */
+
+/* ------------------------------------------------------------ */
+
+/* Main Section Starts */
+
+/* Resizing Book image starts */
+
+#book-info {
+  padding-top: 1rem;
+
+  padding-left: 84px;
+  padding-right: 84px;
+}
+
+/* Short Book Description starts */
+
+.bk-img-tag {
+  width: 160px;
+  height: 224px;
+}
+/* Resizing Book image end */
+
+#book-info .info-name {
+  text-transform: uppercase;
+}
+
+.bk-srt-desc .bk-price-previous {
+  text-decoration: line-through;
+}
+
+.bk-info-head {
+  font-size: 20px;
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  line-height: 27px;
+  letter-spacing: -0.24px;
+}
+
+.bk-price-con {
+  margin-top: 15px;
+}
+
+.info-ttl {
+  font-size: 14px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: -0.06px;
+}
+
+.info-ans {
+  font-size: 14px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: -0.06px;
+
+  color: #0000ff;
+
+  margin-left: 16px;
+}
+
+.bk-price-con {
+  border: 1px solid #9e9694;
+  padding: 0.6rem 1rem 0rem 1rem;
+  border-radius: 4px;
+}
+
+.bk-price h4 {
+  font-size: 14px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: -0.06px;
+  margin-bottom: 0;
+}
+
+.bk-final-price {
+  font-size: 12px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: -0.05px;
+}
+
+.input-radio-buy {
+  accent-color: #ff5c3e;
+  transform: scale(1.5);
+}
+
+.bk-buy-btn {
+  color: #fff;
+  padding: 8px 3px;
+  font-size: 16px;
+  box-shadow: none;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  text-transform: initial;
+  background-color: #ff5c3e;
+
+  border: none;
+}
+
+/* Short Book Description ends */
+
+/* Book Long Description css starts */
+
+.bk-head {
+  margin-top: 2rem;
+}
+
+.bk-head-ttl {
+  font-size: 20px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  line-height: 27px;
+  letter-spacing: -0.24px;
+}
+
+.bk-summary {
+  margin-top: 1rem;
+}
+
+.bk-summary h4 {
+  font-size: 16px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: -0.06px;
+}
+
+.bk-cvr-pts {
+  flex-wrap: wrap;
+}
+
+.cvr-ptr-ctr {
+  border: 1px solid #e8e8e8;
+  margin: 0.5rem 0.5rem 1rem 0rem;
+  padding: 0.5rem;
+  font-size: 16px;
+  background: #ffffff;
+  border-radius: 2rem;
+}
+
+.cvr-pt {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+
+  white-space: nowrap;
+  padding: 0 12px 0 12px;
+  text-overflow: ellipsis;
+}
+/* Book Long Description css end */
+
+/* Pulisher info starts */
+
+.pub-abt h2 {
+  font-size: 20px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: -0.24px;
+}
+
+.pub-abt-info h4 {
+  font-size: 16px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: -0.06px;
+}
+
+/* Pulisher info ends */
+
+/* More books section starts */
+
+.more-bks-heading {
+  margin-top: 1rem;
+}
+
+.more-bks-heading h2 {
+  font-size: 20px;
+  font-family: Poppins, "Noto Sans JP", sans-serif;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: -0.24px;
+}
+
+.more-bks-row {
+  margin-top: 1rem;
+}
+
+.img-grid-item {
+  padding: 1rem;
+}
+
+/* More books section end */
+
+/* Main Section ends */
+
+/* ------------------------------------------------------------ */
+
+/* Media Queries css start */
+
+/* 768PX */
+@media only screen and (max-width: 768px) {
+  /* Book Short Description starts */
+  .bk-img-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Book Short Description ends */
+}
+
+/* 575px */
+@media only screen and (max-width: 575px) {
+  .img-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* More Books */
+  .img-grid-item {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* 510PX */
+@media only screen and (max-width: 510px) {
+  /* Book Short Description starts */
+
+  .bk-info-head {
+    font-size: 85%;
+  }
+
+  .bk-img-tag {
+    width: 145px;
+    height: 203px;
+  }
+
+  .info-ttl {
+    font-size: 85%;
+  }
+
+  .info-ans {
+    font-size: 85%;
+  }
+
+  /* Book Short Description ends */
+
+  .img-grid-container {
+    display: grid;
+
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 444PX */
+@media only screen and (max-width: 444px) {
+  .info-ttl {
+    font-size: 65%;
+  }
+
+  .info-ans {
+    font-size: 65%;
+  }
+
+  .bk-price h4 {
+    font-size: 75%;
+  }
+
+  .bk-price h5 {
+    font-size: 65%;
+  }
+
+  .bk-buy-btn {
+    font-size: 75%;
+  }
+}
+
+/* Media Queries css end */

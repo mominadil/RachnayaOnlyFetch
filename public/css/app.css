@@ -1,0 +1,736 @@
+/* CSS RESET */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* CSS RESET ENDS */
+
+/* Sidebar Category Active Starts */
+
+.active {
+  background-color: #f5f5f5;
+  color: #fff;
+}
+
+/* Sidebar Category Active Ends */
+
+/* Header Section CSS start */
+
+#main-header {
+  min-height: 20px;
+
+  justify-content: space-between;
+
+  font-weight: 500;
+  line-height: 23px;
+  background-color: #fff;
+
+  min-height: 70px;
+  position: relative;
+
+  /* overflow: hidden; */
+
+  box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+}
+
+.rachnaye-logo {
+  min-width: 85%;
+}
+
+#main-header .header-nav {
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 600;
+  font-family: "Open Sans", "Arial", "sans-serif";
+  transition: all 0s;
+}
+
+.nav-link-con {
+  transition: all 1.5s;
+}
+
+#main-header .header-nav-link {
+  text-decoration: none;
+
+  font-size: 14px;
+
+  padding-bottom: 20px;
+
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#main-header .header-nav-link-home {
+  color: #2ea3f2;
+}
+
+#main-header .nav-hamburger {
+  cursor: pointer;
+}
+
+/* Header Section CSS end */
+
+/* Section main content starts */
+
+#main-content {
+  position: relative;
+}
+
+/* Sidebar Search starts */
+
+#main-content .search-box-wrapper {
+  border: solid 1px #e9e9e9;
+}
+
+#main-content .search {
+  width: 100%;
+  padding: 11px;
+  padding-right: 20px;
+  outline: none;
+  border: none;
+
+  position: relative;
+}
+
+.sidebar-heading {
+  font-weight: 400;
+
+  font-family: "Raleway", sans-serif;
+}
+
+.pop-ctgs-heading {
+  padding: 10px;
+}
+
+#main-content .search-btn {
+  background-color: inherit;
+  border: none;
+  color: #e5534c;
+
+  height: 39px;
+  width: 46px;
+  transition: 200ms;
+  font-size: 18px;
+}
+
+#main-content .search-btn:hover {
+  background-color: #e5534c;
+  color: #fff;
+}
+
+/* Sidebar Search ends */
+
+/* Main section sidebar element css start */
+
+.sidebar {
+  position: relative;
+}
+
+.bk-ctgs {
+  transition: all 0.5s ease-in-out;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.bk-ctg {
+  font-family: "Raleway", sans-serif;
+
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 27px;
+  letter-spacing: 1px;
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  height: 27px;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  padding-right: 15px;
+}
+
+.bk-ctg-link {
+  color: #212529;
+  text-decoration: none;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+}
+
+.right-arrow {
+  font-size: 14px;
+}
+
+/* Hamburger menu icon css start */
+.sidebar-head-nav {
+  cursor: pointer;
+  display: none;
+}
+/* Hamburger menu icon css end */
+
+.selection-categories {
+  cursor: pointer;
+  padding: 4px 10px;
+}
+
+.ctg-link {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.selection-categories:active {
+  background-color: black;
+  color: #fff;
+}
+
+.selection-categories:first-child {
+  border-bottom: solid 1px #e9e9e9;
+}
+
+.selection-categories:not(:last-child) {
+  border-top: solid 1px #e9e9e9;
+}
+
+/* Main section sidebar element css end */
+
+#main-content .book-info:hover {
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 10%), 0 2px 3px rgb(0 0 0 / 20%);
+  transition: all 0.8s;
+}
+
+#main-content .prahat-books-img {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* Popular book section starts */
+
+/* Popular book section ends */
+
+#main-content .book-heading {
+  padding: 0 7px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #252525;
+
+  font-family: "Raleway", sans-serif;
+}
+
+.book-categories {
+  position: relative;
+  margin-top: 5px;
+}
+
+/* Changing book image size start */
+
+.display-book {
+  height: 190px;
+
+  width: 116.8px;
+}
+
+.panel {
+  background-color: #f5f5f5;
+  margin-bottom: 2em;
+  padding: 0 50px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+/* Changing book image size ends */
+
+/* Book title css starts */
+.book-title {
+  font-size: 14px;
+  margin-top: 10px;
+
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Book title css ends */
+
+#main-content .buy {
+  color: #848484;
+  width: 100%;
+  float: left;
+  text-align: center;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-content .cart-button {
+  background-color: transparent;
+  text-transform: uppercase;
+
+  border: 1px solid transparent;
+
+  box-shadow: inset 0 0 20px rgb(0 0 0 / 0%);
+  outline: 1px solid;
+  outline-color: hsl(0, 0%, 76%);
+  outline-offset: 0;
+  background-color: transparent;
+  color: #7b7979;
+  font-size: 12px;
+  padding: 8px 15px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 850ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#main-content .cart-button:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgb(255 255 255 / 50%),
+    0 0 20px rgb(255 255 255 / 20%);
+  outline-color: rgba(0, 0, 0, 0);
+  outline-offset: 15px;
+}
+
+/* View all btn css start */
+
+/* #main-content .view-all-btn {
+  border: solid 1px #e5534c;
+  color: #fff;
+  padding: 12px 40px;
+  font-size: 18px;
+
+  position: relative;
+
+  background-color: #e5534c;
+} */
+
+#main-content .view-all-btn {
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+
+  font-family: "Raleway", sans-serif;
+
+  padding: 12px 30px;
+
+  transition: all 0.3s;
+}
+
+#main-content .view-all-btn:hover {
+  color: #fff;
+
+  position: relative;
+
+  background-color: #e5534c;
+}
+
+/* View All Button Hover logic css starts */
+
+/* #main-content .view-all-btn::after {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  z-index: 2;
+  display: block;
+  content: "";
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(255, 255, 255, 0)),
+    to(rgba(255, 255, 255, 0.3))
+  );
+  background: -o-linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+
+  transform: skewX(-25deg);
+}
+
+#main-content .view-all-btn:hover::after {
+  left: 100%;
+} */
+
+/* View All Button Hover logic css ends */
+
+/* View all btn css ends */
+
+#main-content .cart-button:focus {
+  outline: none;
+}
+
+/* Section main content end */
+
+/* Footer  section CSS */
+
+#main-footer {
+  padding-top: 40px;
+  background-color: #49767b;
+}
+
+#main-footer .footer-heading {
+  font-family: "Poppins", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 700;
+  color: #ffffff !important;
+  line-height: 1.5em;
+
+  font-size: 18px;
+}
+
+#main-footer .footer-links {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Poppins", Helvetica, Arial, Lucida, sans-serif;
+  line-height: 1.8em;
+}
+
+#main-footer .social-icon {
+  font-size: 25px;
+}
+
+#main-footer .social-icon-facebook {
+  color: darkblue;
+}
+#main-footer .social-icon-instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  -webkit-background-clip: text;
+  /* Also define standard property for compatibility */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company-info {
+  padding: 27px 0;
+  background-color: black;
+  color: #fff;
+
+  font-family: "Poppins", Helvetica, Arial, Lucida, sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+/* Footer  section CSS ends */
+
+/* ---------------------------Media queries Section START-------------------- */
+
+/* Media query for sidebar start */
+
+/* Media query at 1200px starts */
+
+@media only screen and (max-width: 1200px) {
+  /* Book category heading */
+
+  #main-content .book-heading {
+    font-size: 90%;
+  }
+
+  /* View All Button */
+  #main-content .view-all-btn {
+    padding: 10px 35px;
+
+    font-size: 90%;
+  }
+
+  /* Move navigation down */
+
+  .nav-link-con {
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    width: 50%;
+    z-index: 2;
+    clip-path: inset(0 0 100% 0);
+  }
+
+  #main-header .header-nav {
+    border-top: 3px solid #2ea3f2;
+
+    padding-top: 10.4375px;
+    flex-direction: column;
+    background-color: #fff;
+  }
+
+  #main-header .header-nav li {
+    margin: 15px;
+  }
+
+  #main-header .header-nav-link {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    color: #666;
+  }
+}
+
+/* Media query at 1200px end */
+
+/* Media query at 993 px */
+@media only screen and (max-width: 993px) {
+  .bk-ctgs {
+    position: absolute;
+    top: 55%;
+    left: -100%;
+  }
+
+  #main-content .sidebar-heading {
+    position: relative;
+    font-size: 80%;
+    margin-bottom: 25px;
+
+    padding: 2px 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #main-content .sidebar-heading {
+    font-size: 65%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #main-content .sidebar-heading {
+    font-size: 60%;
+  }
+}
+
+/* Media query of footer */
+@media only screen and (max-width: 548px) {
+  .footer-heading {
+    font-size: 13px !important;
+  }
+  .footer-links {
+    font-size: 12px !important;
+  }
+
+  .social-icon {
+    font-size: 18px !important;
+  }
+}
+
+/* Media query for screen width less than 576px */
+@media only screen and (max-width: 576px) {
+  /* Popular book category media query start */
+  .sidebar-bk-ctgs-container {
+    display: flex;
+  }
+
+  .sidebar-head-nav {
+    display: inline-block;
+  }
+  /* Popular book category media query end */
+
+  .book-info-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .book-info {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .rachnaye-logo {
+    height: 31px;
+    width: 151px;
+  }
+
+  .bks-heading {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+
+/* Search Icon Input */
+@media only screen and (max-width: 380px) {
+  .search {
+    font-size: 12px !important;
+  }
+
+  .fa-search {
+    font-size: 15px !important;
+  }
+
+  .footer-heading {
+    font-size: 10px !important;
+  }
+  .footer-links {
+    font-size: 10px !important;
+  }
+
+  .social-icon {
+    font-size: 15px !important;
+  }
+
+  .book-info-container {
+    flex-direction: column;
+  }
+
+  .book-info {
+    width: 100%;
+  }
+}
+
+/* ---------------------------Media queries Section END -------------------- */
+
+/* Position class starts */
+
+.move-left {
+  left: 0%;
+}
+
+.move-down-nav {
+  clip-path: inset(0 0 0% 0);
+}
+
+/* Position class end */
+
+/* position: absolute;
+left: 0%;
+top: 100%;
+z-index: 2;
+background-color: grey;
+width: 50%;
+display: flex;
+flex-direction: column; */

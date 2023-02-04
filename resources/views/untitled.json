@@ -1,0 +1,165 @@
+{
+    "_id": "63c522af54161b84cc9cef6a",
+    "id": "8633acfa-8922-4be8-ad17-49f884efe2e8",
+    "title": "Beyond the Doors of Chaos",
+    "description": "Have you spent a large part of your life thinking of excuses for why you are not happy and why you are not achieving your goals?\r\n“I don’t have the money”\r\n“I don’t have support”\r\n“I have no idea what I want”\r\n“I don’t think I can do it”\r\nDid you hear them all right?\r\n\r\nGhafeetho tells you that it is time to pull yourself together and create a fantastic life by just implementing a few things. Her voice is one that you can relate to. Whether you have reached rock bottom, just feeling a little demotivated or simply feeling a little lost. This book helps you get back on track. This book serves as a guide, to help you step by step regain your spark for life and help you create a vision for your future. The action steps in this book can be used over and over again as you face an ordeal in the future. This book helps create your second chance to a better and more fulfilling you!",
+    "totalTimesRead": 0,
+    "authors": [
+        {
+            "id": "0da88baa-eecc-4b86-a608-0c2d2a75cb3e",
+            "bio": "Ghafeetho Abrahams wants to live in a world where individuals confidently believe in themselves and are empowered enough to pursue their dreams and live up to their greatest potential.\nGhafeetho was born in Strand in the Western Cape. She is a wife and a mother to two precious girls. She qualified as a Teacher, teaching Mathematics for several years to aspiring young learners. Ghafeetho has always had a love for motivating and being motivated. As a teacher she took the opportunity to plant the essential seeds of ambition in her learners with the desire to work hard and thrive towards something great. She believes that everyone can live up to their greatest potential.\nGhafeetho has taken her mission to motivate others to aspire at their best by blogging part-time with the hope of inspiring women on personal growth, lifestyle and motherhood. \nWith her colorful zest for life and consistently wanting to grow, Ghafeetho did a blogger writers course and has a formal photographic qualification. Discovering her creative side has been a real adventure.\nWriting inspirational books has always been on her mind. She wanted to write a book with a familiar voice that so many can relate to.\nWith her published book, ‘Two years before 30’, it has become a reality. A motivational guide that enables young women to overcome obstacles in their way of achieving great things and to draw them closer to their greatest potential.\nGhafeetho is determined to help individuals to change the limiting views of themselves.",
+            "name": "Ghafeetho Abrahams",
+            "image": "https://rachnaye-prod.s3-accelerate.amazonaws.com/c810b6a8-fbfe-483f-9f20-f3f17c5a1015/author-images/5a20d2a2-7e92-4627-b129-422b46120758.jpg",
+            "popularName": "Ghafeetho Abrahams"
+        }
+    ],
+    "keywords": [
+        "self-help",
+        "mental health",
+        "mind",
+        "success",
+        "wellness"
+    ],
+    "language": "english",
+    "publisher": {
+        "_id": "6270ef9231b84706a6633a67",
+        "id": "c810b6a8-fbfe-483f-9f20-f3f17c5a1015",
+        "iamUserId": "a64f8b64-ebc4-410f-9954-ef7fa882afd1",
+        "name": "Inkfeathers Publishing",
+        "emailId": "inkfeathersmedia@gmail.com",
+        "status": "active",
+        "createdAt": "2022-05-03T09:02:10.847Z",
+        "updatedAt": "2023-01-05T12:08:47.624Z",
+        "__v": 0,
+        "digitalShare": 40,
+        "hardboundShare": 65,
+        "paperbackShare": 65,
+        "perBookCharges": 0,
+        "rentalShare": 40,
+        "featuredCharges": 0,
+        "featuredFrom": "2023-01-04T03:11:31.360Z",
+        "featuredTill": "2023-03-31T18:29:59.999Z",
+        "address": {
+            "street": "Vivek Vihar, New Delhi- 110095",
+            "city": "",
+            "state": "",
+            "country": "",
+            "pincode": ""
+        },
+        "bio": "A content-driven startup, which has now become India’s most author-friendly platform, helping young aspiring writers to publish & sell their books globally and supporting them in building their network for good outreach. ",
+        "gstin": "",
+        "profileImageUrl": "https://rachnaye-prod.s3-accelerate.amazonaws.com/c810b6a8-fbfe-483f-9f20-f3f17c5a1015/user-profiles/c3b58a8d-62c2-49de-9095-7cdf55b3c9a1.jpg",
+        "requiresShipping": false,
+        "contactNumber": {
+            "countryCode": "+91",
+            "phoneNumber": "8448753699"
+        },
+        "bookFeatureCharges": 30,
+        "selfFeatureCharges": 100
+    },
+    "publishedAt": "2023-01-16T10:10:55.399Z",
+    "category": "self-help",
+    "avgReadingTime": 126,
+    "pricing": {
+        "planName": "BASIC",
+        "sellPrice": 99,
+        "paperBackPrice": 99
+    },
+    "url": "https://rachnaye-prod.s3-accelerate.amazonaws.com/c810b6a8-fbfe-483f-9f20-f3f17c5a1015/books-epub/beyond%20the%20doors%20of%20chaos.epub?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZXCIV2KP3BTGZDAX%2F20230119%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20230119T051702Z&X-Amz-Expires=86400&X-Amz-Signature=b312006d3a8b17fe13cfbf674652a6b8f2ae5b6e4084547710af73d8061c82aa&X-Amz-SignedHeaders=host",
+    "status": "PUBLISHED",
+    "digital": {
+        "timesRead": 0,
+        "isbn": "978-93-90882-34-2",
+        "pages": 63
+    },
+    "contentType": "PAID",
+    "hasDigital": true,
+    "hasRental": false,
+    "hasHardbound": false,
+    "hasPaperback": false,
+    "hardbound": {
+        "quantityUnderProcess": 0,
+        "distributor": []
+    },
+    "paperback": {
+        "pages": 63,
+        "isbn": "",
+        "distributor": [
+            {
+                "distributorId": "fe3771b2-6700-4f68-b250-ce729527b791",
+                "quantityAvailable": 10
+            }
+        ],
+        "quantityUnderProcess": 0,
+        "weight": {
+            "value": 100,
+            "unit": "grams"
+        },
+        "width": {
+            "value": 14,
+            "unit": "cm"
+        },
+        "height": {
+            "value": 21.47,
+            "unit": "cm"
+        },
+        "depth": {
+            "value": 1,
+            "unit": "cm"
+        }
+    },
+    "originCountry": "South Africa",
+    "ageRange": {
+        "lowerLimit": 11,
+        "upperLimit": 18
+    },
+    "isActivated": true,
+    "offers": [],
+    "previews": [
+        {
+            "idx": 0,
+            "previewImage": "c810b6a8-fbfe-483f-9f20-f3f17c5a1015/books-images/76d60883-fd2d-4f97-ac9c-b6f3e661bbbe.jpg"
+        },
+        {
+            "idx": 1,
+            "previewImage": "c810b6a8-fbfe-483f-9f20-f3f17c5a1015/books-images/144ac76a-f71a-4d56-a01b-52166701cea7.jpg"
+        },
+        {
+            "idx": 2,
+            "previewImage": "c810b6a8-fbfe-483f-9f20-f3f17c5a1015/books-images/bc61175a-00e5-4adc-a40f-108abba6b0e7.jpg"
+        },
+        {
+            "idx": 3,
+            "previewImage": "c810b6a8-fbfe-483f-9f20-f3f17c5a1015/books-images/f441e298-bc40-42c0-8381-1a5f5b66ac4e.jpg"
+        },
+        {
+            "idx": 4,
+            "previewImage": "c810b6a8-fbfe-483f-9f20-f3f17c5a1015/books-images/f61ae0c2-b699-4db7-aa92-adc236fde012.jpg"
+        }
+    ],
+    "citation": [],
+    "createdAt": "2023-01-16T10:10:55.423Z",
+    "updatedAt": "2023-01-16T10:24:44.584Z",
+    "__v": 0,
+    "thumbnailFront": "https://rachnaye-prod.s3-accelerate.amazonaws.com/c810b6a8-fbfe-483f-9f20-f3f17c5a1015/books-images/bda87e03-fb2c-440a-86aa-4644f7692adc.jpg",
+    "preOrderAvailable": false,
+    "authorsData": [
+        {
+            "_id": "63c522af54161b84cc9cef68",
+            "id": "0da88baa-eecc-4b86-a608-0c2d2a75cb3e",
+            "name": "Ghafeetho Abrahams",
+            "popularName": "Ghafeetho Abrahams",
+            "languages": [
+                "english"
+            ],
+            "categories": [
+                "self-help"
+            ],
+            "createdAt": "2023-01-16T10:10:55.411Z",
+            "updatedAt": "2023-01-16T10:24:17.374Z",
+            "__v": 0,
+            "image": "c810b6a8-fbfe-483f-9f20-f3f17c5a1015/author-images/5a20d2a2-7e92-4627-b129-422b46120758.jpg",
+            "bio": "Ghafeetho Abrahams wants to live in a world where individuals confidently believe in themselves and are empowered enough to pursue their dreams and live up to their greatest potential.\nGhafeetho was born in Strand in the Western Cape. She is a wife and a mother to two precious girls. She qualified as a Teacher, teaching Mathematics for several years to aspiring young learners. Ghafeetho has always had a love for motivating and being motivated. As a teacher she took the opportunity to plant the essential seeds of ambition in her learners with the desire to work hard and thrive towards something great. She believes that everyone can live up to their greatest potential.\nGhafeetho has taken her mission to motivate others to aspire at their best by blogging part-time with the hope of inspiring women on personal growth, lifestyle and motherhood. \nWith her colorful zest for life and consistently wanting to grow, Ghafeetho did a blogger writers course and has a formal photographic qualification. Discovering her creative side has been a real adventure.\nWriting inspirational books has always been on her mind. She wanted to write a book with a familiar voice that so many can relate to.\nWith her published book, ‘Two years before 30’, it has become a reality. A motivational guide that enables young women to overcome obstacles in their way of achieving great things and to draw them closer to their greatest potential.\nGhafeetho is determined to help individuals to change the limiting views of themselves."
+        }
+    ]
+}
