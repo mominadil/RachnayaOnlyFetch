@@ -9,7 +9,7 @@ class BookController extends Controller
 {
     public function search($slug, $page = 1, $perPage = 10)
     {
-        $books = cache()->remember('books', 60, function() use ($slug) {
+        $books = cache()->remember('books_'.$slug, 60, function() use ($slug) {
             $url = "https://api.rachnaye.com/api/book/slug/".$slug;
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);

@@ -18,7 +18,18 @@
                         <div class="bk-info-name-img">
                             <!-- Book image -->
                             <div class="bk-img">
-                                <img class="bk-img-tag" src="{{ $book['thumbnailFront'] }}" alt="{{ $book['title'] }}" />
+                                @php
+                                use Cocur\Slugify\Slugify;
+                                $slugify = new Slugify();
+                                $slug = $slugify->slugify($book['title']);
+                                // $slug = Str::slug($book['title']);
+                                $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
+                                @endphp
+                                @if (Storage::exists($imagePath)) 
+                                <img class="bk-img-tag saved" title="{{ $book['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" alt="{{ $book['title'] }}" />
+                                @else
+                                <img class="bk-img-tag {{$imagePath}}" src="{{ $book['thumbnailFront'] }}" alt="{{ $book['title'] }}" />
+                                @endif
                             </div>
                         </div>
                         <!-- Book Short Info -->
@@ -43,7 +54,7 @@
                             </div>
                             <div class="info-pages d-flex">
                                 <h4 class="info-ttl">Pages:</h4>
-                                <h4 class="info-ans">{{ $book['paperback']['pages'] }}</h4>
+                                <h4 class="info-ans">{{ $book['digital']['pages'] ?? $book['paperback']['pages'] ?? $book['hardbound']['pages'] }}</h4>
                             </div>
                             <div class="info-country d-flex">
                                 <h4 class="info-ttl">Country of Origin:</h4>
@@ -113,8 +124,9 @@
                 <section class="bk-cvr-pts d-flex">
                     {{-- @dd($book['keywords']) --}}
                     @foreach($book['keywords'] as $keywords)
+                    {{-- @dd($keywords) --}}
                     <div class="cvr-ptr-ctr">
-                        <div class="cvr-pt">{{ $keywords->keywords }}</div>
+                        <div class="cvr-pt">{{ $keywords }}</div>
                     </div>
                     @endforeach
                 </section>
@@ -145,7 +157,19 @@
                         {{-- @dd($publisher_books['slug']) --}}
                         <div class="img-grid-item col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <a href="{{ url('/book/'.$publisher_books['slug']) }}">
-                                <img class="bk-img-tag" src="{{ $publisher_books['thumbnailFront'] }}" alt="{{ $publisher_books['title'] }}" />
+                                @php
+                                // use Cocur\Slugify\Slugify;
+                                $slugify = new Slugify();
+                                $slug = $slugify->slugify($publisher_books['title']);
+                                // $slug = Str::slug($book['title']);
+                                $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
+                                @endphp
+                                @if (Storage::exists($imagePath)) 
+                                <img class="bk-img-tag saved" title="{{ $publisher_books['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" alt="{{ $publisher_books['title'] }}" />
+                                @else
+                                <img class="bk-img-tag {{$imagePath}}" src="{{ $publisher_books['thumbnailFront'] }}" alt="{{ $publisher_books['title'] }}" />
+                                @endif
+                                {{-- <img class="bk-img-tag" src="{{ $publisher_books['thumbnailFront'] }}" alt="{{ $publisher_books['title'] }}" /> --}}
                             </a>
                         </div>
                         {{-- @if($loop->iteration =='6') --}}

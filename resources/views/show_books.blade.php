@@ -25,7 +25,16 @@
         <li class="col-lg-3 col-sm-6 col-md-3 book-info p-2 d-flex flex-column align-items-center">
             <div class="book-image mb-2">
                 <a href="{{ url('/book/'.$book['slug']) }}">
+                    @php
+                    $slug = Str::slug($book['title']);
+                    $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
+                    @endphp
+                    @if (Storage::exists($imagePath)) 
+                        <img class="display-book" title="{{ $book['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" />
+                    
+                    @else
                     <img class="display-book" title="{{ $book['title'] }}" src="{{ $book['thumbnailFront'] }}" alt="{{ $book['title'] }}" />
+                    @endif
                 </a>
             </div>
             <label class="book-title mb-2 text-center">
@@ -68,10 +77,11 @@
 @endforeach
 @else
 {{-- @foreach($book as $book) --}}
-{{-- @dd($book['title']) --}}
+{{-- @dd($book) --}}
 <section class="bk-ctg-astrology mt-4 panel">
     <div class="bks-heading flex-wrap d-flex py-4 align-items-center justify-content-between">
         {{-- <h3 class="book-heading">{{ Str::headline($category->category) }}</h3> --}}
+        {{-- {{ $slug = $request->route('category_slug') }} --}}
         <!-- View All Forth comings button Start -->
         {{-- <div class="add-cart more">
             <a class="view-all-btn text-decoration-none" href="#">
@@ -87,7 +97,15 @@
         <li class="col-lg-3 col-sm-6 col-md-3 book-info p-2 d-flex flex-column align-items-center">
             <div class="book-image mb-2">
                 <a href="{{ url('/book/'.$book['slug']) }}">
+                    @php
+                    $slug = Str::slug($book['title']);
+                    $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
+                    @endphp
+                    @if (Storage::exists($imagePath)) 
+                        <img class="display-book" title="{{ $book['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" />
+                    @else
                     <img class="display-book" title="{{ $book['title'] }}" src="{{ $book['thumbnailFront'] }}" alt="{{ $book['title'] }}" />
+                    @endif
                 </a>
             </div>
             <label class="book-title mb-2 text-center">

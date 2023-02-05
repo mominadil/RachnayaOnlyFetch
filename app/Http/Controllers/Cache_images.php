@@ -2,41 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Cache;
+use Cocur\Slugify\Slugify;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
     public function getAllCategories($page = 1, $perPage = 10)
     {
-       // Get the book data from the cache or from the API
-        $category_all = cache()->remember('category_all', 60, function() {
+        $categories = cache()->remember('category_all', 60, function() {
             $url = "https://api.rachnaye.com/api/book/portal/categoryBooks";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $response = curl_exec($ch);
             curl_close($ch);
-            return $response;
+            $category_all = json_decode($response, true);
+            $categories = [];
+            foreach ($category_all['data'] as $category => $books) {
+                foreach ($books as $key => $book) {
+                    $slugify = new Slugify();
+                    $slug = $slugify->slugify($book['title']);
+                    $cachedImageUrl = Cache::remember('cached_image_url_'.$slug, 1440, function () use ($book, $slug) {
+                        $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
+                        if (!Storage::exists($imagePath)) {
+                            $image = file_get_contents($book['thumbnailFront']);
+                            Storage::put($imagePath, $image);
+                        }
+                        return Storage::url($imagePath);
+                    });
+                    $book['thumbnailFront'] = $cachedImageUrl;
+                    $categories[$category][$key] = $book;
+                }
+            }
+            return $categories;
         });
-        $category_all = json_decode($category_all, true);
-        $categories = [];
-        $count = 0;
-        foreach ($category_all['data'] as $category=>$books) {
-            $categories[$category] = $books;
-        }
         return $categories;
-
     }
+
 
     public function categoryAll()
     {
         $categories = $this->getAllCategories();
-        // dd($categories);
-        
         return view('/template', compact('categories'));
     }
 
-    public function CategorySearch(Request $request,$category_slug)
+    public function CategorySearch($category_slug)
     {
         $categories = $this->getAllCategories();
     // Get the book data from the cache or from the API
