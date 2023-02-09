@@ -10,7 +10,6 @@
         <div class="container">
             {{-- @foreach($book as $book) --}}
             {{-- @dd($book) --}}
-
             <section id="book-info" class="book-info container-fluid">
                 <!-- Book Short Description Start-->
                 <section class="bk-srt-desc row">
@@ -25,7 +24,7 @@
                                 // $slug = Str::slug($book['title']);
                                 $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
                                 @endphp
-                                @if (Storage::exists($imagePath)) 
+                                @if (Storage::exists($imagePath))
                                 <img class="bk-img-tag saved" title="{{ $book['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" alt="{{ $book['title'] }}" />
                                 @else
                                 <img class="bk-img-tag {{$imagePath}}" src="{{ $book['thumbnailFront'] }}" alt="{{ $book['title'] }}" />
@@ -41,12 +40,16 @@
                             <div class="info-authors d-flex">
                                 <h4 class="info-ttl">Authors(s):</h4>
                                 @foreach ($book['authors'] as $authors)
-                                <h4 class="info-ans">{{ $authors['name'] }}</h4>
+                                <a class="text-danger text-decoration-none" href="{{ url('/author/'.$authors['id']) }}">
+                                    <h4 class="info-ans">{{ $authors['name'] }}</h4>
+                                </a>
                                 @endforeach
                             </div>
                             <div class="info-publisher d-flex">
                                 <h4 class="info-ttl">Publisher:</h4>
-                                <h4 class="info-ans">{{ $book['publisher']['name'] }}</h4>
+                                <a class="text-danger text-decoration-none" href="{{ url('/publisher/'.$book['publisher']['id']) }}">
+                                    <h4 class="info-ans">{{ $book['publisher']['name'] }}</h4>
+                                </a>
                             </div>
                             <div class="info-language d-flex">
                                 <h4 class="info-ttl">Language:</h4>
@@ -58,7 +61,13 @@
                             </div>
                             <div class="info-country d-flex">
                                 <h4 class="info-ttl">Country of Origin:</h4>
-                                <h4 class="info-ans">{{ $book['originCountry'] }}</h4>
+                                <h4 class="info-ans">
+                                    @if(isset($book['originCountry']))
+                                    {{ $book['originCountry'] }}
+                                    @else
+                                    N/A
+                                    @endif
+                                </h4>
                             </div>
                             <div class="info-age d-flex">
                                 <h4 class="info-ttl">Age Range:</h4>
@@ -76,33 +85,45 @@
                             <div class="price-radio">
                                 <input class="input-radio-buy" type="radio" checked />
                             </div>
+                            @if($book['hasPaperback'] == 'true')
                             <div class="bk-price">
-                                <h4>Buy Digital Copy</h4>
+                                <h4>Buy A Copy</h4>
                                 <div class="d-flex">
                                     <h5 class="me-2 bk-final-price">for</h5>
                                     {{-- <h5 class="bk-price-previous me-2 bk-final-price">
                                         &#8377;99
                                     </h5> --}}
-                                    @if(isset($book['pricing']))
-                                    @if(isset($book['pricing']['paperBackPrice']))
-                                    <h5 class="bk-price-new bk-final-price">&#8377;{{  $book['pricing']['paperBackPrice'] }}</h5>
-                                    @else
-                                    @if(isset($book['pricing']['sellPrice']))
-                                    <h5 class="bk-price-new bk-final-price">&#8377;{{  $book['pricing']['sellPrice'] }}</h5>
-                                    @else
-                                    @if(isset($book['pricing']['hardboundPrice']))
-                                    <h5 class="bk-price-new bk-final-price">&#8377;{{  $book['pricing']['hardboundPrice'] }}</h5>
-                                    @endif
-                                    @endif
-                                    @endif
-                                    @endif
-
+                                    <h5 class="bk-price-new bk-final-price">&#8377;{{ $book['pricing']['paperBackPrice'] }}</h5>
+                                </div>
+                            </div>
+                            @elseif($book['hasHardbound'] == 'true')
+                            <div class="bk-price">
+                                <h4>Buy A Copy</h4>
+                                <div class="d-flex">
+                                    <h5 class="me-2 bk-final-price">for</h5>
+                                    {{-- <h5 class="bk-price-previous me-2 bk-final-price">
+                                        &#8377;99
+                                    </h5> --}}
+                                    <h5 class="bk-price-new bk-final-price">&#8377;{{ $book['pricing']['hardboundPrice'] }}</h5>
                                     {{-- <h5 class="bk-price-new bk-final-price">&#8377;{{ $validatedData['price'] }}</h5> --}}
                                 </div>
                             </div>
+                            @elseif($book['hasDigital'] == 'true')
+                            <div class="bk-price">
+                                <h4>Buy A Copy</h4>
+                                <div class="d-flex">
+                                    <h5 class="me-2 bk-final-price">for</h5>
+                                    {{-- <h5 class="bk-price-previous me-2 bk-final-price">
+                                        &#8377;99
+                                    </h5> --}}
+                                    <h5 class="bk-price-new bk-final-price">&#8377;{{ $book['pricing']['sellPrice'] }}</h5>
+                                    {{-- <h5 class="bk-price-new bk-final-price">&#8377;{{ $validatedData['price'] }}</h5> --}}
+                                </div>
+                            </div>
+                            @endif
                         </div>
                         <div class="bk-buy">
-                            <a target="_blank" href="{{ redirect('http://app.rachnaye.com/digital/book?id='.$book['id'])->getTargetUrl() }}"><button class="w-100 bk-buy-btn">Buy Now</button></a>
+                            <a target="_blank" href="{{ redirect('http://app.rachnaye.com/portal/book?id='.$book['id'])->getTargetUrl() }}"><button class="w-100 bk-buy-btn">Buy Now</button></a>
                         </div>
                     </div>
                     <!-- Book Short Description End-->
@@ -113,9 +134,9 @@
                         <h2 class="bk-head-ttl">Book Description</h2>
                     </div>
                     <div class="bk-summary">
-                        <h4>
+                        <p>
                             {{$book['description']}}
-                        </h4>
+                        </p>
                     </div>
                 </section>
                 {{-- @dd($book['keywords']) --}}
@@ -133,19 +154,19 @@
                 <!-- Book Cover points end -->
                 <!-- Publisher info start -->
                 {{-- @dd($book) --}}
-                <section class="publisher-info">
+                {{-- <section class="publisher-info">
                     <div class="pub-abt">
                         <h2>About Publisher</h2>
                     </div>
                     <div class="pub-abt-info">
-                        {{-- @dd($book->publisher->bio) --}}
-                        {{-- @foreach($book['publisher_details'] as $publisher) --}}
+                        @dd($book->publisher->bio)
+                        @foreach($book['publisher_details'] as $publisher)
                         <h4>
-                            {{-- {{ $book['publisher']['bio'] }} --}}
+                            {{ $book['publisher']['bio'] }}
                         </h4>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </div>
-                </section>
+                </section> --}}
                 <!-- Publisher info end -->
                 <!-- More Books Section starts -->
                 <section class="more-bks-sec">
@@ -153,8 +174,8 @@
                         <h2>More Books from {{ $book['publisher']['name'] }}</h2>
                     </div>
                     <div class="img-grid-container mt-3 row">
-                        @foreach($book['publisher_details'] as $publisher_books)
-                        {{-- @dd($publisher_books['slug']) --}}
+                        {{-- @dd($book['publisher_details']['books']) --}}
+                        @foreach($book['publisher_details']['books'] as $publisher_books)
                         <div class="img-grid-item col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <a href="{{ url('/book/'.$publisher_books['slug']) }}">
                                 @php
@@ -164,7 +185,7 @@
                                 // $slug = Str::slug($book['title']);
                                 $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
                                 @endphp
-                                @if (Storage::exists($imagePath)) 
+                                @if (Storage::exists($imagePath))
                                 <img class="bk-img-tag saved" title="{{ $publisher_books['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" alt="{{ $publisher_books['title'] }}" />
                                 @else
                                 <img class="bk-img-tag {{$imagePath}}" src="{{ $publisher_books['thumbnailFront'] }}" alt="{{ $publisher_books['title'] }}" />
@@ -181,7 +202,6 @@
                 <!-- More Books Section ends -->
             </section>
             {{-- @endforeach --}}
-
         </div>
     </main>
 </body>

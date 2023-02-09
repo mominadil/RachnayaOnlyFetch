@@ -1,7 +1,7 @@
 <section class="col-lg-3 sidebar d-flex flex-column">
     <!-- Search Tab Starts here -->
-    <form action="" class="search-box-wrapper d-flex align-items-center my-3">
-        <input type="text" name="search" class="search" placeholder="ISBN, Title, Author or Keywords" />
+    <form action="{{ route('search') }}" method="get" class="search-box-wrapper d-flex align-items-center my-3">
+        <input type="text" name="key" class="search" placeholder="ISBN, Title, Author or Keywords" />
         <button class="search-btn" type="submit">
             <i class="fa fa-search"></i>
         </button>

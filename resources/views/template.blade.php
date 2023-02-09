@@ -29,6 +29,12 @@
                         @include('show_books', ['categories' => $categories])
                         @elseif(Route::is('category.slug'))
                         @include('show_books', ['book' => $book])
+                        @elseif(Route::is('author.author_id'))
+                        @include('show_books', ['book' => $author_book])
+                        @elseif(Route::is('publisher.publisher_id'))
+                        @include('show_books', ['book' => $publisher_book])
+                        @elseif(Route::is('search'))
+                        @include('show_books', ['book' => $results])
                         {{-- @include('show_books', ['category' => $category, 'book' => $book]) --}}
                         @endif
                     </section>
@@ -45,8 +51,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!-- Javascrit file -->
-    {{-- <script src="script/main.js"></script> --}}
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 </body>
 
 </html>

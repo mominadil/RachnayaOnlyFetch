@@ -17,11 +17,7 @@
     <ul class="row book-info-container">
         <!-- Book 1 -->
         @foreach($books as $book)
-
-
         {{-- @dd($book['pricing']['hardboundPrice']) --}}
-
-
         <li class="col-lg-3 col-sm-6 col-md-3 book-info p-2 d-flex flex-column align-items-center">
             <div class="book-image mb-2">
                 <a href="{{ url('/book/'.$book['slug']) }}">
@@ -29,9 +25,8 @@
                     $slug = Str::slug($book['title']);
                     $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
                     @endphp
-                    @if (Storage::exists($imagePath)) 
-                        <img class="display-book" title="{{ $book['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" />
-                    
+                    @if (Storage::exists($imagePath))
+                    <img class="display-book" title="{{ $book['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" />
                     @else
                     <img class="display-book" title="{{ $book['title'] }}" src="{{ $book['thumbnailFront'] }}" alt="{{ $book['title'] }}" />
                     @endif
@@ -53,8 +48,6 @@
                 @endif
                 @endif
                 @endif
-
-
             </span>
             <div class="add-cart mt-2">
                 <a href="{{ url('/book/'.$book['slug']) }}">
@@ -80,7 +73,16 @@
 {{-- @dd($book) --}}
 <section class="bk-ctg-astrology mt-4 panel">
     <div class="bks-heading flex-wrap d-flex py-4 align-items-center justify-content-between">
-        {{-- <h3 class="book-heading">{{ Str::headline($category->category) }}</h3> --}}
+        @if(isset($book['publisher']))
+        <h3 class="book-heading">Publisher: {{ Str::headline($book['publisher']) }}</h3>
+        @elseif(isset($book['author']))
+        <h3 class="book-heading">Author: {{ Str::headline($book['author']) }}</h3>
+        @elseif(Route::is('category.slug'))
+        <h3 class="book-heading">Category: {{ Str::headline(Route::current()->parameter('category_slug')) }}</h3>
+        {{-- {{ Route::current()->parameter('category_slug') }} --}}
+        @endif
+        {{-- {{ Route::input('category.slug') }} --}}
+        {{-- {{ Route::current()->parameter('category.slug') }} --}}
         {{-- {{ $slug = $request->route('category_slug') }} --}}
         <!-- View All Forth comings button Start -->
         {{-- <div class="add-cart more">
@@ -93,7 +95,8 @@
     <!-- Forth coming Title and View All Button ends -->
     <ul class="row book-info-container">
         <!-- Book 1 -->
-        @foreach($book as $book)
+        @foreach((Route::is('category.slug') || Route::is('search') ? $book : $book['books']) as $book)
+
         <li class="col-lg-3 col-sm-6 col-md-3 book-info p-2 d-flex flex-column align-items-center">
             <div class="book-image mb-2">
                 <a href="{{ url('/book/'.$book['slug']) }}">
@@ -101,8 +104,8 @@
                     $slug = Str::slug($book['title']);
                     $imagePath = 'public/cached_images/image_'.$slug.'.jpg';
                     @endphp
-                    @if (Storage::exists($imagePath)) 
-                        <img class="display-book" title="{{ $book['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" />
+                    @if (Storage::exists($imagePath))
+                    <img class="display-book" title="{{ $book['title'] }}" src="{{ asset(Storage::url('public/cached_images/image_'.$slug.'.jpg')) }}" />
                     @else
                     <img class="display-book" title="{{ $book['title'] }}" src="{{ $book['thumbnailFront'] }}" alt="{{ $book['title'] }}" />
                     @endif
@@ -124,8 +127,6 @@
                 @endif
                 @endif
                 @endif
-
-
             </span>
             <div class="add-cart mt-2">
                 <a href="{{ url('/book/'.$book['slug']) }}">
