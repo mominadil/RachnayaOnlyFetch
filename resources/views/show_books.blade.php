@@ -79,18 +79,11 @@
         <h3 class="book-heading">Author: {{ Str::headline($book['author']) }}</h3>
         @elseif(Route::is('category.slug'))
         <h3 class="book-heading">Category: {{ Str::headline(Route::current()->parameter('category_slug')) }}</h3>
-        {{-- {{ Route::current()->parameter('category_slug') }} --}}
+        @elseif(Route::is('search'))
+        <h3 class="book-heading">Search Result for '{{ Str::headline(request('key')) }}', {{ count($book) }} records found</h3>
+        {{-- <h1>{{ request('key') }}</h1> --}}
         @endif
-        {{-- {{ Route::input('category.slug') }} --}}
-        {{-- {{ Route::current()->parameter('category.slug') }} --}}
-        {{-- {{ $slug = $request->route('category_slug') }} --}}
-        <!-- View All Forth comings button Start -->
-        {{-- <div class="add-cart more">
-            <a class="view-all-btn text-decoration-none" href="#">
-                View All
-            </a>
-        </div> --}}
-        <!-- View All Forth comings button end -->
+        
     </div>
     <!-- Forth coming Title and View All Button ends -->
     <ul class="row book-info-container">

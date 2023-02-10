@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class CategoryController extends Controller
 {
@@ -10,15 +11,10 @@ class CategoryController extends Controller
     {
        // Get the book data from the cache or from the API
         $category_all = cache()->remember('category_all', 60, function() {
-            $url = "https://api.rachnaye.com/api/book/portal/categoryBooks";
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $response = curl_exec($ch);
-            curl_close($ch);
-            return $response;
+            $client = new Client();
+            $response = $client->get('https://api.rachnaye.com/api/book/portal/categoryBooks');
+            return json_decode($response->getBody(), true);
         });
-        $category_all = json_decode($category_all, true);
         $categories = [];
         $count = 0;
         foreach ($category_all['data'] as $category=>$books) {
@@ -41,16 +37,13 @@ class CategoryController extends Controller
         $categories = $this->getAllCategories();
     // Get the book data from the cache or from the API
         $category_search = cache()->remember("category_search_$category_slug", 60, function() use ($category_slug) {
-            $url = "https://api.rachnaye.com/api/book/portal/category/".$category_slug;
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $response = curl_exec($ch);
-            curl_close($ch);
-            return $response;
+            // $url = "https://api.rachnaye.com/api/book/portal/category/".$category_slug;
+            $client = new Client();
+            $response = $client->get('https://api.rachnaye.com/api/book/portal/category/'.$category_slug);
+            return json_decode($response->getBody(), true);
         });
-        $book = json_decode($category_search, true);
-        $book = $book['data'];
+        // $book = json_decode($category_search, true);
+        $book = $category_search['data'];
         // dd($book);
         return view('/template', compact('book', 'categories'));
     }

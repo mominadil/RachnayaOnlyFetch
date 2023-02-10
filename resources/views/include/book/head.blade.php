@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS File -->
     <link href="{{ asset('css/book.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> --}}
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/53575efaf3.js" crossorigin="anonymous"></script>

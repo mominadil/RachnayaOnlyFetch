@@ -89,3 +89,7 @@ sidebarElements.addEventListener("click", (e) => {
   list[index].children[0].classList.add("link-white");
   highletedIndex = index;
 });
+
+
+
+

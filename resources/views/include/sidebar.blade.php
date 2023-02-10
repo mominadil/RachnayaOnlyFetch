@@ -1,11 +1,14 @@
 <section class="col-lg-3 sidebar d-flex flex-column">
     <!-- Search Tab Starts here -->
     <form action="{{ route('search') }}" method="get" class="search-box-wrapper d-flex align-items-center my-3">
-        <input type="text" name="key" class="search" placeholder="ISBN, Title, Author or Keywords" />
+        <input type="text" name="key" class="search" placeholder="ISBN, Title, Author or Keywords" value="{{ request('key') }}" />
         <button class="search-btn" type="submit">
             <i class="fa fa-search"></i>
         </button>
     </form>
+    <div class="results-container">
+        
+    </div>
     <!-- Search tab ends here -->
     <!-- Popular books categories info start -->
     <div class="sidebar-bk-ctgs-container d-lg-block d-sm-flex justify-content-end">
@@ -21,9 +24,8 @@
     <!-- Popular books categories info end -->
     <ul id="bk-ctgs" class="bk-ctgs tabs">
         @foreach($categories as $category=>$book)
-
         <li class="d-flex justify-content-between selection-categories align-items-center tab {{ Request::is('category/'.Str::slug($category)) ? 'active' : '' }}">
-            <a class="bk-ctg text-decoration-none" href='{{ url('category/'.Str::slug($category)) }}' >
+            <a class="bk-ctg text-decoration-none" href='{{ url('category/'.Str::slug($category)) }}'>
                 {{ Str::headline($category) }}
             </a>
             <div class="right-arrow">
@@ -33,5 +35,4 @@
         @endforeach
     </ul>
 </section>
-
 {{-- {{ Request::is('category/'.$category->slug) ? 'active' : '' }} --}}

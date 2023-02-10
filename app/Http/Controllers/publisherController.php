@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\CategoryController;
-
+use GuzzleHttp\Client;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class publisherController extends Controller
 {
@@ -15,16 +17,12 @@ class publisherController extends Controller
         // Get the book data from the cache or from the API
         // dd($author_id);
         $publisherBooks = cache()->remember("publisherBooks_{$publisher_id}", 60, function() use ($publisher_id) {
-            $url = "https://api.rachnaye.com/api/publisher/".$publisher_id."/publishedBooks";
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $response = curl_exec($ch);
-            curl_close($ch);
-            return $response;
+            $client = new Client();
+            $response = $client->get('https://api.rachnaye.com/api/publisher/'.$publisher_id.'/publishedBooks?pageSize=10');
+            return json_decode($response->getBody(), true);
         });
-        $publisher_book = json_decode($publisherBooks, true);
-        $publisher_book = $publisher_book['data'];
+        $publisher_book = $publisherBooks['data'];
+        // $publisher_book = collect($publisher_book)->paginate(10);
         // dd($categories);
         return view('/template', compact('publisher_book', 'categories')); 
     }

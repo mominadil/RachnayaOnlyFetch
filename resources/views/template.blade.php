@@ -52,7 +52,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!-- Javascrit file -->
     <script src="{{ asset('js/app.js') }}"></script>
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    {{--
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 </body>
+<script>
+$(document).ready(function() {
+    $('input[name="key"]').on('keyup', function() {
+        var key = $(this).val();
+        $.ajax({
+            url: '{{ route("search") }}',
+            method: 'get',
+            data: {
+                key: key
+            },
+            success: function(response) {
+                var html = '';
+                if (response.length > 0) {
+                    html += '<h3>Search results for "' + key + '":</h3>';
+                    html += '<ul class="results-list">';
+                    for (var i = 0; i < response.length; i++) {
+                        html += '<li class="result-item">';
+                        html += '<a href="/book/' + response[i]['slug'] + '">' + response[i]['title'] + '</a>';
+                        html += '</li>';
+                    }
+                    html += '</ul>';
+                } else {
+                    html += '<p>No results found for "' + key + '".</p>';
+                }
+                // console.log(html)
+                $('.results-container').html(html);
+            }
+
+        });
+    });
+});
+
+</script>
 
 </html>

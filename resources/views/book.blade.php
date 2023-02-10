@@ -5,7 +5,7 @@
 {{-- @dd($book['title']) --}}
 
 <body>
-    @include('include.book.header')
+    @include('include.header')
     <main>
         <div class="container">
             {{-- @foreach($book as $book) --}}
@@ -81,7 +81,7 @@
                     </div>
                     <!-- Book price and buy option -->
                     <div class="bk-buy-con col-xl-4 col-lg-4">
-                        <div class="bk-price-con d-flex align-items-center gap-3 mb-3">
+                        {{-- <div class="bk-price-con d-flex align-items-center gap-3 mb-3">
                             <div class="price-radio">
                                 <input class="input-radio-buy" type="radio" checked />
                             </div>
@@ -90,9 +90,6 @@
                                 <h4>Buy A Copy</h4>
                                 <div class="d-flex">
                                     <h5 class="me-2 bk-final-price">for</h5>
-                                    {{-- <h5 class="bk-price-previous me-2 bk-final-price">
-                                        &#8377;99
-                                    </h5> --}}
                                     <h5 class="bk-price-new bk-final-price">&#8377;{{ $book['pricing']['paperBackPrice'] }}</h5>
                                 </div>
                             </div>
@@ -101,11 +98,7 @@
                                 <h4>Buy A Copy</h4>
                                 <div class="d-flex">
                                     <h5 class="me-2 bk-final-price">for</h5>
-                                    {{-- <h5 class="bk-price-previous me-2 bk-final-price">
-                                        &#8377;99
-                                    </h5> --}}
                                     <h5 class="bk-price-new bk-final-price">&#8377;{{ $book['pricing']['hardboundPrice'] }}</h5>
-                                    {{-- <h5 class="bk-price-new bk-final-price">&#8377;{{ $validatedData['price'] }}</h5> --}}
                                 </div>
                             </div>
                             @elseif($book['hasDigital'] == 'true')
@@ -113,15 +106,11 @@
                                 <h4>Buy A Copy</h4>
                                 <div class="d-flex">
                                     <h5 class="me-2 bk-final-price">for</h5>
-                                    {{-- <h5 class="bk-price-previous me-2 bk-final-price">
-                                        &#8377;99
-                                    </h5> --}}
                                     <h5 class="bk-price-new bk-final-price">&#8377;{{ $book['pricing']['sellPrice'] }}</h5>
-                                    {{-- <h5 class="bk-price-new bk-final-price">&#8377;{{ $validatedData['price'] }}</h5> --}}
                                 </div>
                             </div>
                             @endif
-                        </div>
+                        </div> --}}
                         <div class="bk-buy">
                             <a target="_blank" href="{{ redirect('http://app.rachnaye.com/portal/book?id='.$book['id'])->getTargetUrl() }}"><button class="w-100 bk-buy-btn">Buy Now</button></a>
                         </div>
@@ -205,5 +194,6 @@
         </div>
     </main>
 </body>
+@include('include.footer')
 
 </html>

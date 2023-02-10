@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\CategoryController;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class authorController extends Controller
@@ -23,16 +24,12 @@ class authorController extends Controller
         // Get the book data from the cache or from the API
         // dd($author_id);
         $authorBooks = cache()->remember("authorBooks_{$author_id}", 60, function() use ($author_id) {
-            $url = "https://api.rachnaye.com/api/author/".$author_id."/booksForPortal";
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $response = curl_exec($ch);
-            curl_close($ch);
-            return $response;
+            // $url = "https://api.rachnaye.com/api/author/".$author_id."/booksForPortal";
+            $client = new Client();
+            $response = $client->get('https://api.rachnaye.com/api/author/'.$author_id.'/booksForPortal');
+            return json_decode($response->getBody(), true); 
         });
-        $author_book = json_decode($authorBooks, true);
-        $author_book = $author_book['data'];
+        $author_book = $authorBooks['data'];
         // dd($categories);
         return view('/template', compact('author_book', 'categories'));
     }
