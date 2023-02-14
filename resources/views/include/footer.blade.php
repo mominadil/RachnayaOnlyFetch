@@ -1,61 +1,61 @@
 <footer id="main-footer">
     <div class="container mb-4">
         <div class="container-fluid">
-            <div class="row mx-5">
-                <div class="col-lg-4 col-md-12  footer-element">
-                    <h4 class="text-white mb-3 footer-heading">Quick Links</h4>
+            <div class="row mx-3">
+                <div class="col-lg-4 col-md-12 mb-2 footer-element">
+                    <h4 class="text-white  footer-heading">Quick Links</h4>
                     <div class="footer-links">
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/faqs/">FAQs</a>
                             </span>
                         </p>
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/resources/">Resources</a>
                             </span>
                         </p>
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/privacy-policy/">Privacy Policy</a>
                             </span>
                         </p>
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/terms-of-use/">Terms of use</a>
                             </span>
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 footer-element">
-                    <h4 class="text-white mb-3 footer-heading">Join Us</h4>
+                <div class="col-lg-4 col-md-12 mb-2 footer-element">
+                    <h4 class="text-white  footer-heading">Join Us</h4>
                     <div class="footer-links">
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/terms-of-use/">As Writer</a>
                             </span>
                         </p>
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/terms-of-use/">As Reader</a>
                             </span>
                         </p>
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/terms-of-use/">As Publisher</a>
                             </span>
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-12 footer-element">
-                    <h4 class="text-white mb-3 footer-heading">Contact</h4>
+                <div class="col-lg-4 col-md-12 mb-2 footer-element">
+                    <h4 class="text-white  footer-heading">Contact</h4>
                     <div class="footer-links">
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/terms-of-use/">Send a message</a>
                             </span>
                         </p>
-                        <p>
+                        <p class="m-0">
                             <span>
                                 <a class="text-white d-block text-decoration-none mb-2" href="https://rachnaye.com/terms-of-use/">Follow Us</a>
                             </span>
@@ -82,6 +82,6 @@
         </div>
     </div>
     <div class="company-info">
-        <p class="text-center">@2022 Rachnaye Pvt. Ltd.</p>
+        <p class="text-center m-0">@2022 Rachnaye Pvt. Ltd.</p>
     </div>
 </footer>

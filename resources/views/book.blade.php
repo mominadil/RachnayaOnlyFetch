@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('include.book.head')
+@include('include.book.head', ['book' => $book])
+
 {{-- @foreach($book as $book) --}}
 {{-- @dd($book['title']) --}}
 
@@ -195,5 +196,6 @@
     </main>
 </body>
 @include('include.footer')
+<script src="{{ asset('js/book.js') }}"></script>
 
 </html>

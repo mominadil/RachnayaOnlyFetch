@@ -1,23 +1,23 @@
-<header id="main-header" class="d-flex align-items-center  container">
+<header id="main-header" class="d-flex align-items-center">
     <div class="rachnaye-logo-container ps-3">
-        <img class="rachnaye-logo" src="{{ Storage::url('images/rachnaye-logo.png') }}" alt="rachnaye logo image" />
+        <a href="{{ url('/') }}"><img class="rachnaye-logo" src="{{ Storage::url('images/rachnaye-logo.png') }}" alt="rachnaye logo image" /></a>
     </div>
     <!-- Navigation section start -->
     <nav>
         <div class="nav-link-con" id="nav-link-con">
-            <ul id="header-nav" class="header-nav pe-5">
+            <ul id="header-nav" class="header-nav">
                 <li>
-                    <a class="header-nav-link header-nav-link-home pe-3" href="{{ url('/') }}">Home</a>
+                    <a class="header-nav-link header-nav-link-home" href="{{ url('/') }}">Home</a>
                 </li>
-                <li><a class="header-nav-link pe-3" href="#">About Us</a></li>
+                <li><a class="header-nav-link" href="#">About Us</a></li>
                 <li>
-                    <a class="header-nav-link pe-3" href="#">For Publisher</a>
+                    <a class="header-nav-link" href="#">For Publisher</a>
                 </li>
-                <li><a class="header-nav-link pe-3" href="#">For Writers</a></li>
-                <li><a class="header-nav-link pe-3" href="#">For Readers</a></li>
-                <li><a class="header-nav-link pe-3" href="#">Contact Us</a></li>
-                <li><a class="header-nav-link pe-3" href="#">Blogs</a></li>
-                <li><a class="header-nav-link pe-3" href="#">Login</a></li>
+                <li><a class="header-nav-link" href="#">For Writers</a></li>
+                <li><a class="header-nav-link" href="#">For Readers</a></li>
+                <li><a class="header-nav-link" href="#">Contact Us</a></li>
+                <li><a class="header-nav-link" href="#">Blogs</a></li>
+                <li><a class="header-nav-link" href="#">Login</a></li>
             </ul>
         </div>
         <div class="nav-hamburger d-xl-none d-lg-inline-block d-sm-inline-block">

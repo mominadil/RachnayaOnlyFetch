@@ -1,12 +1,12 @@
 <section class="col-lg-3 sidebar d-flex flex-column">
     <!-- Search Tab Starts here -->
-    <form action="{{ route('search') }}" method="get" class="search-box-wrapper d-flex align-items-center my-3">
+    <form autocomplete="off" action="{{ route('search') }}" method="get"  class="search-box-wrapper d-flex align-items-center my-3">
         <input type="text" name="key" class="search" placeholder="ISBN, Title, Author or Keywords" value="{{ request('key') }}" />
         <button class="search-btn" type="submit">
             <i class="fa fa-search"></i>
         </button>
     </form>
-    <div class="results-container">
+    <div class="results-container" id="panel">
         
     </div>
     <!-- Search tab ends here -->

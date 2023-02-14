@@ -18,7 +18,7 @@
         <!-- Book 1 -->
         @foreach($books as $book)
         {{-- @dd($book['pricing']['hardboundPrice']) --}}
-        <li class="col-lg-3 col-sm-6 col-md-3 book-info p-2 d-flex flex-column align-items-center">
+        <li class="col-lg-3 col-sm-6 col-md-3 book-info p-2 pb-3 d-flex flex-column align-items-center">
             <div class="book-image mb-2">
                 <a href="{{ url('/book/'.$book['slug']) }}">
                     @php
@@ -33,7 +33,7 @@
                 </a>
             </div>
             <label class="book-title mb-2 text-center">
-                <a class="text-danger text-decoration-none" href="{{ url('/book/'.$book['slug']) }}">{{ $book['title'] }}</a>
+                <a class="text-danger text-decoration-none" href="{{ url('/book/'.$book['slug']) }}">{{ Str::title($book['title']) }}</a>
             </label>
             <span class="buy">
                 <i class="fa fa-inr"></i>
@@ -90,7 +90,7 @@
         <!-- Book 1 -->
         @foreach((Route::is('category.slug') || Route::is('search') ? $book : $book['books']) as $book)
 
-        <li class="col-lg-3 col-sm-6 col-md-3 book-info p-2 d-flex flex-column align-items-center">
+        <li class="col-lg-3 col-sm-6 col-md-3 book-info p-2 pb-3 d-flex flex-column align-items-center">
             <div class="book-image mb-2">
                 <a href="{{ url('/book/'.$book['slug']) }}">
                     @php
@@ -105,7 +105,7 @@
                 </a>
             </div>
             <label class="book-title mb-2 text-center">
-                <a class="text-danger text-decoration-none" href="{{ url('/book/'.$book['slug']) }}">{{ $book['title'] }}</a>
+                <a class="text-danger text-decoration-none" href="{{ url('/book/'.$book['slug']) }}">{{ Str::title($book['title']) }}</a>
             </label>
             <span class="buy">
                 <i class="fa fa-inr"></i>

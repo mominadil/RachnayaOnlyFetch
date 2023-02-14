@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('include.head')
-{{-- @dd($book) --}}
-{{-- @foreach($categories as $category => $books) --}}
-{{-- {{Str::headline($category)}} --}}
-{{-- @endforeach --}}
 
+@if(Route::is('home'))
+@include('include.head')
+@elseif(Route::is('category.slug'))
+@include('include.head', ['book' => $book])
+@elseif(Route::is('author.author_id'))
+@include('include.head', ['book' => $author_book])
+@elseif(Route::is('publisher.publisher_id'))
+@include('include.head', ['book' => $publisher_book])
+@elseif(Route::is('search'))
+@include('include.head', ['book' => $results])
+@endif
 <body>
     <!-- Header section start -->
     @include('include.header')
@@ -56,9 +62,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 </body>
 <script>
+// function myFunction() {
+//     document.getElementById("panel").style.display = "block";
+// }
 $(document).ready(function() {
     $('input[name="key"]').on('keyup', function() {
-        var key = $(this).val();
+        var key = $.trim($(this).val());
+        if (!key) {
+            $('.results-container').hide();
+            return;
+        }
         $.ajax({
             url: '{{ route("search") }}',
             method: 'get',
@@ -70,23 +83,37 @@ $(document).ready(function() {
                 if (response.length > 0) {
                     html += '<h3>Search results for "' + key + '":</h3>';
                     html += '<ul class="results-list">';
-                    for (var i = 0; i < response.length; i++) {
-                        html += '<li class="result-item">';
-                        html += '<a href="/book/' + response[i]['slug'] + '">' + response[i]['title'] + '</a>';
+                    for (var i = 0; i < Math.min(10, response.length); i++) {
+                        html += '<li class="result-item" title="' + response[i]['title'] + '">';
+                        html += '<a href="/book/' + response[i]['slug'] + '">' + response[i]['title'].substr(0, 25) + '...</a>';
                         html += '</li>';
                     }
                     html += '</ul>';
+                    html += '<div class="see-all-container"><a href="/search?key=' + key + '" class="see-all-button">See all results for ' + key + '</a></div>';
+
                 } else {
                     html += '<p>No results found for "' + key + '".</p>';
                 }
-                // console.log(html)
-                $('.results-container').html(html);
+                $('.results-container').html(html).show();
             }
-
         });
     });
-});
 
+    // $('.search-box-wrapper').click(function() {
+    //     $('.results-container').show();
+    // });
+
+
+    $(document).mouseup(function(e) {
+        var container = $(".results-container");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.hide();
+        } else {
+            container.show();
+
+        }
+    });
+});
 </script>
 
 </html>
